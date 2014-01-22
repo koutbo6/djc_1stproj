@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Arabizi Converter</h1>
+  {% if word %}
+  <p class="lead">You typed: <br> 
+    {{ word }} <br>
+    Converted:<br>
+    {{ aword }}
+  </p>
+  {% else %}
+  <form method="GET">
+    Word: <input type="text" name="w">
+    <input type=submit>
+  </form>
+  {% endif %}
+{% endblock %}
