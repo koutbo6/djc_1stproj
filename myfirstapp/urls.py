@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, url
+from myfirstapp import views
 
-urlpatterns = patterns('myfirstapp.views',
-    url(r'^me/$','hello_world', kwargs={"username":"Mohammed"}, name='hello_me'),
-    url(r'^arabizi/(?P<word>\w.)?/?$', 'arabizi', name='arabizi'),
-    url(r'^(?P<username>\w+)/$', 'hello_world', name='hello_world'),
-)
+urlpatterns = [
+    url(r'^me/$',views.hello_world, kwargs={"username":"Mohammed"}, name='hello_me'),
+    url(r'^arabizi/(?P<word>\w.)?/?$', views.arabizi, name='arabizi'),
+    url(r'^(?P<username>\w+)/$', views.hello_world, name='hello_world'),
+]
